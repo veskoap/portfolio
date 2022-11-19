@@ -16,7 +16,10 @@ export default function Experience({}: Props) {
         Experience
       </h3>
 
-      <div>
+
+
+      <div className="w-full flex space-x-5 mt-40 overflow-x-scroll p-10 snap-x snap-mandatory h-auto pb-5">
+        <ExperienceCard />
         <ExperienceCard />
         <ExperienceCard />
         <ExperienceCard />

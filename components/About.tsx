@@ -33,7 +33,7 @@ export default function About({}: Props) {
         <Image
           src={ImageOfMe}
           alt="Another picture of me"
-          className="mb-20 md:mb-0 flex-shrink-0 w-52 h-52 rounded-full object-cover md:rounded-full md:w-64 md:h-64 lg:rounded-full lg:w-80 lg:h-80 xl:rounded-full xl:w-96 xl:h-96"
+          className="flex mb-20 md:mb-0 flex-shrink-0 w-52 h-52 rounded-full object-cover md:rounded-full md:w-64 md:h-64 lg:rounded-xl lg:w-80 lg:h-80 xl:w-96 xl:h-96"
         />
       </motion.div>
 
