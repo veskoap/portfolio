@@ -18,7 +18,7 @@ export default function Experience({}: Props) {
 
 
 
-      <div className="w-full flex space-x-5 mt-40 overflow-x-scroll p-10 snap-x snap-mandatory h-auto pb-5">
+      <div className="w-full flex space-x-5 mt-32 overflow-x-scroll p-10 snap-x snap-mandatory h-auto pb-5">
         <ExperienceCard />
         <ExperienceCard />
         <ExperienceCard />
