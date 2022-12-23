@@ -32,7 +32,7 @@ export default function About({}: Props) {
         <Image
           src={ImageOfMe}
           alt="Another picture of me"
-          className=" flex flex-shrink-0 rounded-full md:rounded-2xl pb-4"
+          className=" flex flex-shrink-0 rounded-full max-w-[240px] md:max-w-sm md:rounded pb-4"
         />
       </motion.div>
 
@@ -43,7 +43,7 @@ export default function About({}: Props) {
           backgrond
         </h4>
 
-        <p className="text-base lg:max-w-7xl">
+        <p className="text-base lg:max-w-7xl pb-10">
           Arcu ac tortor dignissim convallis aenean et tortor. Dictumst quisque
           sagittis purus sit amet. Cursus risus at ultrices mi tempus imperdiet
           nulla malesuada. Commodo sed egestas egestas fringilla phasellus.
