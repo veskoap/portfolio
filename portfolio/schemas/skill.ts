@@ -9,7 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       description: 'Title of skill',
-      type: 'string,',
+      type: 'string',
     },
     {
       name: 'progress',

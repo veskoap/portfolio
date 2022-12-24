@@ -8,7 +8,7 @@ export default defineType({
     {
       name: 'jobTitle',
       title: 'JobTitle',
-      type: 'string,',
+      type: 'string',
     },
     {
       name: 'companyImage',

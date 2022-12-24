@@ -9,7 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       description: 'Platform for social media',
-      type: 'string,',
+      type: 'string',
     },
     {
       name: 'url',

@@ -8,7 +8,7 @@ export default defineConfig({
   title: 'portfolio',
 
   projectId: 'ddkzrl25',
-  dataset: 'production',
+  dataset: 'portfolio-sanity',
 
   plugins: [deskTool(), visionTool()],
 

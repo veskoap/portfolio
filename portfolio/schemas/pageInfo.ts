@@ -8,7 +8,7 @@ export default defineType({
     {
       name: 'name',
       title: 'Name',
-      type: 'string,',
+      type: 'string',
     },
     {
       name: 'role',
