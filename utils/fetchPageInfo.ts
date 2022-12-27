@@ -10,3 +10,4 @@ export const fetchPageInfo = async () => {
 
   return pageInfo;
 };
+
