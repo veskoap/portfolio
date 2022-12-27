@@ -5,10 +5,10 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'portfolio',
+  title: 'portfolio-yt-2-build',
 
-  projectId: 'ddkzrl25',
-  dataset: 'portfolio-sanity',
+  projectId: 'vph5xuec',
+  dataset: 'production',
 
   plugins: [deskTool(), visionTool()],
 
