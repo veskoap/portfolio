@@ -1,11 +1,14 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import Link from 'next/link'
+import Link from "next/link";
+import { Social } from "../typings";
 
-type Props = {};
+type Props = {
+  socials: Social[];
+};
 
-export default function Header({}: Props) {
+export default function Header({ socials }: Props) {
   return (
     <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:item-center">
       <motion.div
@@ -25,25 +28,16 @@ export default function Header({}: Props) {
         className="flex flex-row items-center"
       >
         {/*Social Icons*/}
-        <SocialIcon
-          url="https://www.dropbox.com/s/rnj2ofvqb108mzb/Resume.pdf?dl=0"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-
-        <SocialIcon
-          url="https://github.com/veskoap"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-
-        <SocialIcon
-          url="https://www.linkedin.com/in/vesselin-portev-71aa32243/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
       </motion.div>
-      <Link href="#contact">
+      <Link href="#contact" legacyBehavior>
         <motion.div
           initial={{
             x: 500,
@@ -66,9 +60,9 @@ export default function Header({}: Props) {
             fgColor="gray"
             bgColor="transparent"
           />
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+          <a className="uppercase hidden md:inline-flex text-sm text-gray-400">
             Get in Touch
-          </p>
+          </a>
         </motion.div>
       </Link>
     </header>

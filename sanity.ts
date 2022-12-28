@@ -19,5 +19,5 @@ const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION // "2022-11-16"
 // Set up the client for fetching data in the getProps page function
 export const sanityClient = createClient(config);
 
-//export const urlFor = (source: any) => 
-//  createImageUrlBuilder(config).image(source);
+export const urlFor = (source: any) => 
+  createImageUrlBuilder(config).image(source);

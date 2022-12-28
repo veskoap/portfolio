@@ -4,13 +4,17 @@ import Link from "next/link";
 import ImageOfMe from "../images/ImageOfMe.jpeg";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-export default function Hero({}: Props) {
+export default function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
-      "<Hi, I'm Vesko/>",
+      `<Hi, I'm ${pageInfo?.name}/>`,
       "<student/>",
       "<designer/>",
       "<foodie/>",
@@ -27,6 +31,7 @@ export default function Hero({}: Props) {
         priority
         className="relative rounded-full h-72 w-72 mx-auto  object-cover z-10"
         src={ImageOfMe}
+        //src={urlFor(pageInfo?.heroImage).url()}
         alt="A small picture of me the website creator"
       />
       <div className="z-20">
@@ -39,7 +44,7 @@ export default function Hero({}: Props) {
         </h1>
 
         <div className="pt-5">
-          <Link href="#about" >
+          <Link href="#about">
             <button className="heroButton scroll-smooth">About</button>
           </Link>
           <Link href="#experience">
