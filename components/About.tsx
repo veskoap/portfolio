@@ -2,10 +2,14 @@ import React from "react";
 import Image from "next/image";
 import ImageOfMe from "../images/ImageOfMe.jpeg";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -29,8 +33,9 @@ export default function About({}: Props) {
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
       >
-        <Image
-          src={ImageOfMe}
+        <img
+          //src={ImageOfMe}
+          src={urlFor(pageInfo?.profilePicture).url()}
           alt="Another picture of me"
           className=" flex flex-shrink-0 rounded-full max-w-[240px] md:max-w-sm md:rounded pb-4"
         />
@@ -44,13 +49,7 @@ export default function About({}: Props) {
         </h4>
 
         <p className="text-base lg:max-w-7xl pb-10">
-          Arcu ac tortor dignissim convallis aenean et tortor. Dictumst quisque
-          sagittis purus sit amet. Cursus risus at ultrices mi tempus imperdiet
-          nulla malesuada. Commodo sed egestas egestas fringilla phasellus.
-          Vestibulum morbi blandit cursus risus at ultrices. Nisl condimentum id
-          venenatis a condimentum vitae sapien. Tortor condimentum lacinia quis
-          vel eros donec ac odio. Faucibus vitae aliquet nec ullamcorper sit
-          amet risus nullam eget.
+          {pageInfo?.backgroundInformation}
         </p>
       </div>
     </motion.div>

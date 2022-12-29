@@ -1,6 +1,8 @@
 import React from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { PageInfo } from "../typings";
+import pageInfo from "../sanity/schemas/pageInfo";
 
 type Inputs = {
   name: string;
@@ -9,9 +11,11 @@ type Inputs = {
   message: string;
 };
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-function ContactMe({}: Props) {
+function ContactMe({pageInfo}: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
@@ -32,17 +36,17 @@ function ContactMe({}: Props) {
         <div className="space-y-10">
           <div className="flex items-center space-x-5 justify-center">
             <PhoneIcon className="text-[#892CDC] h-7 w-7 animate-pulse" />
-            <p className="text-xl md:text-2xl">+1 857 293 0578</p>
+            <p className="text-xl md:text-2xl">{pageInfo?.phoneNumber}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#892CDC] h-7 w-7 animate-pulse" />
-            <p className="text-xl md:text-2xl">veskoap@icloud.com</p>
+            <p className="text-xl md:text-2xl">{pageInfo?.email}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-[#892CDC] h-7 w-7 animate-pulse" />
-            <p className="text-xl md:text-2xl">Boston, Massachusetts</p>
+            <p className="text-xl md:text-2xl">{pageInfo?.address}</p>
           </div>
         </div>
 
