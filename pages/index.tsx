@@ -41,15 +41,15 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
       </section>
 
       <section id="experience" className="snap-center">
-        <WorkExperience />
+        <WorkExperience experiences={experiences}/>
       </section>
 
       <section id="skills" className="snap-start">
-        <Skills />
+        <Skills skills={skills}/>
       </section>
 
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects}/>
       </section>
 
       <section id="contact" className="snap-start">
@@ -60,7 +60,7 @@ const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
 };
 
 //Features to Implement in future:
-//    1. Smooth scrolling from button to select page
+//    1. Smooth scrolling from button to selected page
 //    2. Curvaceous Svg Background
 export default Home;
 

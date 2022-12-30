@@ -2,11 +2,14 @@ import React from "react";
 import Image from "next/image";
 import ProjectImage from "../images/MetaMessenger.png";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  projects: Project[];
+};
 
-export default function Projects({}: Props) {
-  const projects = [1, 2, 3];
+export default function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -19,7 +22,7 @@ export default function Projects({}: Props) {
       </h3>
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#892CDC]/80">
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-24 h-screen">
             <motion.div
               initial={{
@@ -30,10 +33,10 @@ export default function Projects({}: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Image
-              className="z-5 pt-24 w-[768px]"
-                src={ProjectImage}
-                alt="Demo photo of my clone app"
+              <img
+                className="z-5 pt-24 w-[768px]"
+                src={urlFor(project?.image).url()}
+                alt=""
               />
             </motion.div>
 
@@ -42,17 +45,22 @@ export default function Projects({}: Props) {
                 <span className="underline decoration-[#892CDC]/50">
                   Case Study {i + 1} of {projects.length}:{" "}
                 </span>
-                Messenger Clone
+                {project?.title}
               </h4>
 
+              <div className="flex items-center space-x-2 justify-center">
+                {project.technologies.map((technology) => (
+                  <img
+                    className="h-8 w-8"
+                    key={technology._id}
+                    src={urlFor(technology.image).url()}
+                    alt=""
+                  />
+                ))}
+              </div>
+
               <p className="text-base text-center md:text-left">
-                Meta Messenger 2.0 app built using Upstash, TypeScript, Redis,
-                Tailwind, NextAuth and Pusher. Realtime messaging using Pusher,
-                Upstash and Redis. Login and Logout Authentication flow using
-                NextAuth & Facebook on Next.js 13. Pub/Sub backend using Pusher
-                to enable real-time sync for messages. SWR library is used to
-                efficiently fetch/cache and update data. And it is all deployed
-                through Vercel.
+                {project?.summary}
               </p>
             </div>
           </div>
