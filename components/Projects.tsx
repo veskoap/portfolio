@@ -23,7 +23,10 @@ export default function Projects({ projects }: Props) {
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#892CDC]/80">
         {projects?.map((project, i) => (
-          <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-24 h-screen">
+          <div
+            key={project._id}
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-24 h-screen"
+          >
             <motion.div
               initial={{
                 y: -300,
